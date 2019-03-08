@@ -1,0 +1,13 @@
+/*********/
+/* Buttons
+/*********/
+
+a.btn__purple,
+a.btn__purplebtn:not(.btn-outline):hover { {
+    @include color(purple, background-color);
+    @include color(white);
+    &:hover {
+        @include color(purple, background-color);
+        @include color(white);
+    }
+}

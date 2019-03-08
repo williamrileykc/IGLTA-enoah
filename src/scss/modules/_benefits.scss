@@ -1,0 +1,79 @@
+/*********/
+/* Benefits
+/*********/
+
+.membership-custom {
+    .benefits {
+        border-bottom: 2px solid #c0c0c0;
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        justify-content: center;
+        margin: 0;
+        padding: 0 0 40px 0;
+    }
+    .benefit-pod {
+        width: 25%;
+        margin: 40px 0 0 0;
+        padding: 0 20px;
+        .copy {
+            text-align: center;
+            h4 {
+                text-align: center !important;
+            }
+        }
+
+        .icons {
+            display: block;
+            width: 100%;
+            background: top center no-repeat;
+            height: 52px;
+        }
+
+        
+        .icons.adv {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--adv.png');
+        }
+        .icons.bsm {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--bsm.png');
+        }
+        .icons.eve {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--eve.png');
+        }
+        .icons.glo {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--glo.png');
+        }
+        .icons.mar {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--mar.png');
+        }
+        .icons.net {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--net.png');
+        }
+        .icons.onl {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--onl.png');
+        }
+        .icons.fam {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--fam.png');
+        }
+        .icons.prs {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--prs.png');
+        }
+        .icons.sub {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--sub.png');
+        }
+        .icons.tra {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--tra.png');
+        }
+        .icons.tripadvisor {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--tripadvisor.png');
+        }
+        .icons.igl {
+            background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--igl.png');
+        }
+    }
+
+    .sidebar-button {
+        display: flex;
+    }
+
+}
