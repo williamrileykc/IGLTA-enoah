@@ -3,7 +3,34 @@
 /*********/
 
 .membership-custom {
-    padding-top: 40px;
-
-
+    @include screen(sm, max) {
+        padding: 0 20px;
+    }
+    hr {
+        background-color: transparent;
+        height: 1px;
+        border: solid #c0c0c0;
+        border-width: 0 0 2px 0;
+        margin: 40px 0 0 0;
+    }
+    .sidebar-button {
+        aside {
+            margin-top: 20px;
+        }
+        @include screen(md) {
+            display: flex;
+            article {
+                padding-top: 20px;
+                p {
+                    &:first-of-type {
+                        margin-top: 0px;
+                    }
+                }
+            }
+            aside {
+                margin-top: 0px;
+                padding: 20px 0 0 30px;
+            }
+        }
+    }
 }

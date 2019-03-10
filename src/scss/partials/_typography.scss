@@ -2,15 +2,23 @@
 /* Typography
 /*********/
 
+
 .membership-custom {
     h1, h2, h3, h4, h5, p {
         margin-bottom: 0px!important;
     }
     h2 {
-        margin-top: 60px;
+        margin-top: 30px;
     }
+    h3,
+    h4,
     p {
         margin-top: 30px;
+    }
+    .membership-rates {
+        p {
+            margin-top: 20px;
+        }
     }
 }
 
@@ -29,5 +37,61 @@ h2.h2__page-title {
     text-transform: uppercase!important;
     font-size: 20px!important;
     
+}
+
+.font-pods {
+    font-family: "Poppins";
+    font-weight: 800;
+    line-height: 1em;
+}
+.font-price {
+    @extend .font-pods;
+    @include font-size(30px);
+    margin-top: 24px;
+    em {
+        @include font-size(12px);
+        font-style: normal;
+    }
+}
+
+@mixin pricepoint-bold {
+    @include color(white);
+    p {
+        color: inherit;
+        text-align: center;
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+    .pricepoint-pod--count,
+    .pricepoint-pod--price,
+    .pricepoint-pod--duration {
+        @include font-size(22px);
+        @extend .font-pods;
+    }
+    p.pricepoint-pod--price {
+        @extend .font-price;
+    }
+    p.pricepoint-pod--employees {
+        margin-top: 10px;
+    }
+    p.pricepoint-pod--duration {
+        @include font-size(12px);
+        font-style: normal;  
+        margin-top: 10px;      
+    }
+}
+
+.button-title {
+    font-family: "Open Sans";
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: normal;
+    text-align: center;
+    padding: 0 15px;
+    min-width: 150px;    
 }
 

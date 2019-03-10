@@ -1,0 +1,58 @@
+/*********/
+/* Featured Membership
+/*********/
+.featured-membership {
+    margin-top: 30px;
+    @include screen(md){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+.featured-pod {
+    text-align: center;
+    margin-top: 20px;
+    p {
+        margin-top: 10px;
+        text-align: center;
+    }
+    @include screen(md) {
+        max-width: 400px;
+        margin-top: 0;
+        padding: 0 20px;
+    }
+}
+.featured-pod--head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.featured-pod--bar {
+    @extend .button-title;
+    @include color(yellow, background-color);
+    @include color(white);
+    display: inline-block;
+}
+.featured-pod--title {
+}
+p.featured-pod--price {
+    @extend .font-price;  
+    margin-top: 30px;
+}
+p.featured-pod--duration {
+    @extend .font-pods;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.featured-pod--buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    a.btn {
+        margin-top: 15px;
+        min-width: 200px;
+    }
+}

@@ -3,11 +3,23 @@
 /*********/
 
 a.btn__purple,
-a.btn__purplebtn:not(.btn-outline):hover { {
+a.btn__purple:not(.btn-outline) {
     @include color(purple, background-color);
     @include color(white);
+    border: 1px solid color(purple);
     &:hover {
-        @include color(purple, background-color);
+        background-color: color(transparent) !important;
+        @include color(purple);
+    }
+}
+
+a.btn__purple-inv,
+a.btn__purple-inv:not(.btn-outline) {
+    @include color(transparent, background-color);
+    @include color(purple);
+    border: 1px solid color(purple);
+    &:hover {
+        background-color: color(purple) !important;
         @include color(white);
     }
 }

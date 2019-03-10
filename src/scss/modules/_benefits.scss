@@ -4,18 +4,23 @@
 
 .membership-custom {
     .benefits {
-        border-bottom: 2px solid #c0c0c0;
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
         list-style-type: none;
         justify-content: center;
         margin: 0;
-        padding: 0 0 40px 0;
+        padding: 0;
+        @include screen(md) {
+            flex-direction: row;
+        }
     }
     .benefit-pod {
-        width: 25%;
         margin: 40px 0 0 0;
         padding: 0 20px;
+        @include screen(md) {
+            width: 25%;
+        }
         .copy {
             text-align: center;
             h4 {
@@ -71,9 +76,4 @@
             background-image: url('//iglta.enoah.com/Portals/79/benefit-icons/benefit--igl.png');
         }
     }
-
-    .sidebar-button {
-        display: flex;
-    }
-
 }
