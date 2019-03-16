@@ -1,0 +1,29 @@
+/*********/
+/* Hero Styles
+/*********/
+
+.hero-full {
+    margin-bottom: 40px;
+    position: relative;
+    > img {
+        width: 100%;
+    }
+}
+
+.hero-full--content {
+    @include screen(md) {
+        @include centerer();
+        background-color: black(0.8);
+        min-width: 60%;
+        padding: 20px;
+        text-align: center;
+        h2 {
+            @include color(white);
+            font-size: 48px;
+        }
+        h2,
+        p {
+            text-align: inherit!important;
+        }
+    }
+}

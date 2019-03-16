@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "IGLTA_Enoah",
   "main": "gulpfile.js",
-  "author": "Caleb Zahnd, MMGY Global <czahnd@mmgyglobal.com>",
-  "copyright": "MMGY Global",
+  "author": "Bill Riley <williamrileykc@gmail.com.com>",
+  "copyright": "bSharper.net",
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
@@ -63,10 +63,10 @@
     "wordpress": "^1.4.1"
   },
   "paths": {
-    "theme": "web/",
+    "theme": "web/Portals/79/Skins/IGLTA/",
     "css": {
       "src": "src/scss/*.scss",
-      "dist": "assets/css/"
+      "dist": "css/"
     },
     "src": "src/"
   }

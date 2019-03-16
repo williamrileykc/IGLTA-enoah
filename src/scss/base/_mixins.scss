@@ -6,631 +6,617 @@
 
 //The ol' cover EVERYTHING block. Handy.
 @mixin coverer() {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 // A darn fine way to center something
 @mixin centerer() {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
 }
 @mixin centererX() {
-	left: 50%;
-	transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%) !important;
 }
 @mixin centererY() {
-	top: 50%;
-	transform: translateY(-50%);
+    top: 50%;
+    transform: translateY(-50%) !important;
 }
 
 //Vertical align in 3 lines of css.
 @mixin vertical-align() {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 @mixin word-wrap() {
-	word-break:	 break-word;
-	-webkit-hyphens: auto;
-	-moz-hyphens:	  auto;
-	hyphens:		  auto;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
 
 @mixin ellipsis() {
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-
-
-
 @mixin opacity($opacity) {
-	opacity: $opacity;
-	$opacity-ie: $opacity * 100;
-	filter: alpha(opacity=$opacity-ie); //IE8
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
 }
 
 @function black($opacity) {
-	@return rgba(black, $opacity)
+    @return rgba(black, $opacity);
 }
 @function white($opacity) {
-	@return rgba(white, $opacity)
+    @return rgba(white, $opacity);
 }
 
 @mixin box-shadow() {
-	box-shadow: 1px 5px 80px 0px rgba(0,0,0,0.30);
+    box-shadow: 1px 5px 80px 0px rgba(0, 0, 0, 0.3);
 }
 
 // There's a lot of different clearfix hacks out there on the web. This one (http://nicolasgallagher.com/micro-clearfix-hack) I've found it to be the most solid one. Works in IE6 and up.
 @mixin clearfix {
-	*zoom: 1;
-	&::before,
-	&::after {
-		content: " ";
-		display: table;
-	}
-	&::after {
-		clear: both;
-	}
+    *zoom: 1;
+    &::before,
+    &::after {
+        content: " ";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
 }
 
 %clearfix {
-	@include clearfix();
+    @include clearfix();
 }
 .clearfix {
-	@include clearfix();
+    @include clearfix();
 }
 
 //Colors
 @function color($color, $opacity: 1) {
-	@if ($opacity != 1) {
-		@return rgba(map-get($colors, $color), $opacity);
-		} @else {
-			@return map-get($colors, $color);
-		}
-	}
-
-	@mixin color($color, $property-name: color, $opacity: 1) {
-		@if ($opacity != 1) {
-			#{$property_name}: rgba(color($color), $opacity);
-			} @else {
-				#{$property_name}: color($color);
-			}
-		}
-
-		@mixin hover {
-			&:hover,
-			&:focus,
-			&:active {
-				@content;
-			}
-		}
-
-		@function unicode($str) {
-			@return unquote("\"") + $str + unquote("\"");
-		}
-
-		$colorhover-transition: all 400ms ease-in-out;
-		@mixin colorhover($color: blue) {
-			body[device="desktop"] & {
-				&::after {
-					@include color($color, background-color);
-					content: '';
-					display: block;
-					height: 100%;
-					width: 100%;
-					opacity: 0;
-					transition: $colorhover-transition;
-					position: absolute;
-					top: 0;
-					left: 0;
-					@include z-index(ground);
-				}
-				@include hover {
-					&::after {
-						opacity: 0.7;
-						transition: all 400ms ease-in-out;
-					}		
-				}
-			}	
-		}
-		@mixin colorhoverIMG($color: blue) {
-			&::before {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				background: linear-gradient(to bottom, rgba(color(white),0) 0%,rgba(color(black),0.5) 100%);
-				transition: $colorhover-transition;
-				@include z-index(ground);
-				opacity: 1;
-			}
-			body[device="desktop"] & {
-				&::after {
-					@include color($color, background-color);
-					content: '';
-					display: block;
-					height: 100%;
-					width: 100%;
-					opacity: 0;
-					transition: $colorhover-transition;
-					position: absolute;
-					top: 0;
-					left: 0;
-					@include z-index(ground);
-				}
-				@include hover {
-					&::after {
-						opacity: 0.7;
-						transition: all 400ms ease-in-out;
-					}
-					&::before {
-						transition: $colorhover-transition;
-						opacity: 1;
-					}			
-				}
-			}		
-		}
-
-//Iconfont
-@mixin iconfont($content: " ", $font-size: inherit, $color: inherit ) {
-	font-family: $font-iconfont;
-	speak: none;
-	font-style: normal;
-	font-weight: 100;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	content: unicode($content);
-	font-size: $font-size;
-	color: $color;
-	
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    @if ($opacity != 1) {
+        @return rgba(map-get($colors, $color), $opacity);
+    } @else {
+        @return map-get($colors, $color);
+    }
 }
 
-@mixin object-fit($width:100%, $height:100%) {
-	&:not(html):not(body) {
-		object-fit: cover;
-		object-position: center center;
-		width:$width;
-		height:$height;
-	}
+@mixin color($color, $property-name: color, $opacity: 1) {
+    @if ($opacity != 1) {
+        #{$property_name}: rgba(color($color), $opacity);
+    } @else {
+        #{$property_name}: color($color)!important;
+    }
+}
+
+@mixin hover {
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}
+
+@function unicode($str) {
+    @return unquote('"') + $str + unquote('"');
+}
+
+$colorhover-transition: all 400ms ease-in-out;
+@mixin colorhover($color: blue) {
+    body[device="desktop"] & {
+        &::after {
+            @include color($color, background-color);
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: $colorhover-transition;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include z-index(ground);
+        }
+        @include hover {
+            &::after {
+                opacity: 0.7;
+                transition: all 400ms ease-in-out;
+            }
+        }
+    }
+}
+@mixin colorhoverIMG($color: blue) {
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to bottom, rgba(color(white), 0) 0%, rgba(color(black), 0.5) 100%);
+        transition: $colorhover-transition;
+        @include z-index(ground);
+        opacity: 1;
+    }
+    body[device="desktop"] & {
+        &::after {
+            @include color($color, background-color);
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: $colorhover-transition;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include z-index(ground);
+        }
+        @include hover {
+            &::after {
+                opacity: 0.7;
+                transition: all 400ms ease-in-out;
+            }
+            &::before {
+                transition: $colorhover-transition;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+//Iconfont
+@mixin iconfont($content: " ", $font-size: inherit, $color: inherit) {
+    font-family: $font-iconfont;
+    speak: none;
+    font-style: normal;
+    font-weight: 100;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    content: unicode($content);
+    font-size: $font-size;
+    color: $color;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin object-fit($width: 100%, $height: 100%) {
+    &:not(html):not(body) {
+        object-fit: cover;
+        object-position: center center;
+        width: $width;
+        height: $height;
+    }
 }
 
 .object-fit {
-	@include object-fit();
+    @include object-fit();
 }
 
 //Good way to hide something but have it still be accessible to screen-readers
 @mixin visuallyhidden {
-	position: absolute;
-	margin: -1px;
-	padding: 0;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
 }
 
 %isVisuallyHidden {
-	@include visuallyhidden();
+    @include visuallyhidden();
 }
 
 .isVisuallyHidden {
-	@include visuallyhidden();
+    @include visuallyhidden();
 }
 
-
 //Uses the Sass-Map defined in partials/variables.scss
-@mixin z-index($level: ground, $important: 'null') {
-	@if ($important == 'important')
-	{
-		z-index: map-get($z-index, $level) !important;
-	}
-	@else {
-		z-index: map-get($z-index, $level);
-	}
+@mixin z-index($level: ground, $important: "null") {
+    @if ($important == "important") {
+        z-index: map-get($z-index, $level) !important;
+    } @else {
+        z-index: map-get($z-index, $level);
+    }
 }
 
 // Map Deep Get
 // Usage: $m-breakpoint: map-deep-get($global-config, "grid-breakpoints", "md");
 // Returns: 768px
 @function map-deep-get($map, $keys...) {
-	@each $key in $keys {
-		$map: map-get($map, $key);
-	}
-	@return $map;
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
 }
 
 // Map-get-next
 // From https://gist.github.com/agorilla/9df052eb1e15d8aea446
 @function map-get-next($map, $key, $fallback: false) {
+    // Check if map is valid
+    @if type_of($map) == map {
+        // Check if key exists in map
+        @if map_has_key($map, $key) {
+            // Init index counter variable
+            $i: 0;
 
-	// Check if map is valid
-	@if type_of($map) == map {
+            // Init key index
+            $key-index: false;
 
-		// Check if key exists in map
-		@if map_has_key($map, $key) {
+            // Traverse map for key
+            @each $map-key, $map-value in $map {
+                // Update index
+                $i: $i + 1;
 
-			// Init index counter variable
-			$i: 0;
+                // If map key found, set key index
+                @if $map-key == $key {
+                    $key-index: $i;
+                }
 
-			// Init key index
-			$key-index: false;
+                // If next index return next value
+                @if $i == $key-index + 1 {
+                    @return $map-value;
+                }
 
-			// Traverse map for key
-			@each $map-key, $map-value in $map {
-				// Update index
-				$i: $i + 1;
+                // If last entry return false
+                @if $i == length($map) {
+                    @return $fallback;
+                }
+            }
 
-				// If map key found, set key index
-				@if $map-key == $key {
-					$key-index: $i;
-				}
+            @warn 'No next map item for key #{$key}';
+            @return $fallback;
+        }
 
-				// If next index return next value
-				@if $i == $key-index + 1 {
-					@return $map-value;
-				}
+        @warn 'No valid key #{$key} in map';
+        @return $fallback;
+    }
 
-				// If last entry return false
-				@if $i == length($map) {
-					@return $fallback;
-				}
-			}
-
-			@warn 'No next map item for key #{$key}';
-			@return $fallback;
-		}
-
-		@warn 'No valid key #{$key} in map';
-		@return $fallback;
-	}
-
-	@warn 'No valid map';
-	@return $fallback;
+    @warn 'No valid map';
+    @return $fallback;
 }
-
 
 //Custom breakpoint mixin
-@mixin screen($breakpoint: 'xs', $query: 'min', $min-width: NULL, $max-width: NULL) {
-	@if (($min-width != NULL) OR ($max-width != NULL)) {
-		
-		@if (($min-width != NULL) and ($max-width == NULL)) {
-			@media only screen and (min-width: $min-width) {
-				@content;
-			}
-		}
-		
-		@if (($min-width == NULL) and ($max-width != NULL)) {
-			@media only screen and (max-width: $max-width) {
-				@content;
-			}
-		}
-		
-		@if (($min-width != NULL) and ($max-width != NULL)) {
-			@media only screen and (min-width: $min-width) and (max-width: $max-width) {
-				@content;
-			}
-		}
-		
-		
-	}
-	@else {
-		@if ($query == 'min') {		
-			@media only screen and (min-width: map-get($grid-breakpoints, $breakpoint)) {
-				@content;
-			}
-		}
-		@if ($query == 'max') {
-			@media only screen and (max-width: (map-get-next($grid-breakpoints, $breakpoint) - 1)) {
-				@content;
-			}
-		}
-		
-		@if ($query == 'only') {
-			@media only screen and (min-width: map-get($grid-breakpoints, $breakpoint)) and (max-width: (map-get-next($grid-breakpoints, $breakpoint) - 1)) {
-				@content;
-			}
-		}
-	}
+@mixin screen($breakpoint: "xs", $query: "min", $min-width: NULL, $max-width: NULL) {
+    @if (($min-width != NULL) OR ($max-width != NULL)) {
+        @if (($min-width != NULL) and ($max-width == NULL)) {
+            @media only screen and (min-width: $min-width) {
+                @content;
+            }
+        }
+
+        @if (($min-width == NULL) and ($max-width != NULL)) {
+            @media only screen and (max-width: $max-width) {
+                @content;
+            }
+        }
+
+        @if (($min-width != NULL) and ($max-width != NULL)) {
+            @media only screen and (min-width: $min-width) and (max-width: $max-width) {
+                @content;
+            }
+        }
+    } @else {
+        @if ($query == "min") {
+            @media only screen and (min-width: map-get($grid-breakpoints, $breakpoint)) {
+                @content;
+            }
+        }
+        @if ($query == "max") {
+            @media only screen and (max-width: (map-get-next($grid-breakpoints, $breakpoint) - 1)) {
+                @content;
+            }
+        }
+
+        @if ($query == "only") {
+            @media only screen and (min-width: map-get($grid-breakpoints, $breakpoint)) and (max-width: (map-get-next($grid-breakpoints, $breakpoint) - 1)) {
+                @content;
+            }
+        }
+    }
 }
 
-
 @mixin gutter($location, $amount: 1) {
-	
-	$margin: floor(map-get($global-config, gutters) * $amount);
-	
-	@if $location == "all" {
-		margin: $margin;
-	}
-	@if $location == "top" {
-		margin-top: $margin;
-	}
-	@if $location == "right" {
-		margin-right: $margin;
-	}
-	@if $location == "bottom" {
-		margin-bottom: $margin;
-	}
-	@if $location == "left" {
-		margin-left: $margin;
-	}
-	@if $location == "internal" {
-		padding: $margin;
-	}
-	@if $location == "internal-top" {
-		padding-top: $margin;
-	}
-	@if $location == "internal-right" {
-		padding-right: $margin;
-	}
-	@if $location == "internal-bottom" {
-		padding-bottom: $margin;
-	}
-	@if $location == "internal-left" {
-		padding-left: $margin;
-	}
+    $margin: floor(map-get($global-config, gutters) * $amount);
+
+    @if $location == "all" {
+        margin: $margin;
+    }
+    @if $location == "top" {
+        margin-top: $margin;
+    }
+    @if $location == "right" {
+        margin-right: $margin;
+    }
+    @if $location == "bottom" {
+        margin-bottom: $margin;
+    }
+    @if $location == "left" {
+        margin-left: $margin;
+    }
+    @if $location == "internal" {
+        padding: $margin;
+    }
+    @if $location == "internal-top" {
+        padding-top: $margin;
+    }
+    @if $location == "internal-right" {
+        padding-right: $margin;
+    }
+    @if $location == "internal-bottom" {
+        padding-bottom: $margin;
+    }
+    @if $location == "internal-left" {
+        padding-left: $margin;
+    }
 }
 
 @function parseInt($n) {
-	@return $n / ($n * 0 + 1);
+    @return $n / ($n * 0 + 1);
 }
 
 @mixin font-size($values) {
-	$px : ();
-	$rem: ();
-	
-	@each $value in $values {
+    $px: ();
+    $rem: ();
 
-		@if $value == 0 or $value == auto {
-			$px : append($px , $value);
-			$rem: append($rem, $value);
-		}
+    @each $value in $values {
+        @if $value == 0 or $value == auto {
+            $px: append($px, $value);
+            $rem: append($rem, $value);
+        } @else {
+            $unit: unit($value);
+            $val: parseInt($value);
 
-		@else {
-			$unit: unit($value);	 
-			$val: parseInt($value);
+            @if $unit == "px" {
+                $px: append($px, $value);
+                $rem: append($rem, ($val / 10 + rem));
+            }
 
-			@if $unit == "px" { 
-				$px : append($px,  $value);
-				$rem: append($rem, ($val / 10 + rem));
-			}
+            @if $unit == "rem" {
+                $px: append($px, ($val * 10 + px));
+                $rem: append($rem, $value);
+            }
+        }
+    }
 
-			@if $unit == "rem" {
-				$px : append($px,  ($val * 10 + px));
-				$rem: append($rem, $value);
-			}
-		}
-	}
-
-	@if $px == $rem {		  
-		font-size: $px; 
-		} @else {
-			font-size: $px; 
-			font-size: $rem;
-		}
-	}
-
-// Letter Spacing
-@function tracking( $target ){
-	@return ($target / 1000) * 1em;
+    @if $px == $rem {
+        font-size: $px;
+    } @else {
+        font-size: $px;
+        font-size: $rem;
+    }
 }
 
-@mixin tracking( $target ){
-	letter-spacing: tracking( $target );
+// Letter Spacing
+@function tracking($target) {
+    @return ($target / 1000) * 1em;
+}
+
+@mixin tracking($target) {
+    letter-spacing: tracking($target);
 }
 
 @mixin browser($browser) {
-	body[browser=#{$browser}] & {
-		@content;
-	}	
+    body[browser="#{$browser}"] & {
+        @content;
+    }
 }
 
 @function strip-unit($value) {
-	@return $value / ($value * 0 + 1);
+    @return $value / ($value * 0 + 1);
 }
 
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-	$u1: unit($min-vw);
-	$u2: unit($max-vw);
-	$u3: unit($min-font-size);
-	$u4: unit($max-font-size);
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
 
-	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-		& {
-			font-size: $min-font-size;
-			@media screen and (min-width: $min-vw) {
-				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-			}
-			@media screen and (min-width: $max-vw) {
-				font-size: $max-font-size;
-			}
-		}
-	}
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(
+                    #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+                        ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+                );
+            }
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
 }
 
-@mixin staggered_transitions($nth:1,$items:2,$initial:0,$step:.1){
-	@for $i from $nth through $items{
-		&:nth-of-type(#{$i}){
-			transition-delay:#{$initial}s;
-		}
-		$initial: $initial + $step;
-	}
+@mixin staggered_transitions($nth: 1, $items: 2, $initial: 0, $step: 0.1) {
+    @for $i from $nth through $items {
+        &:nth-of-type(#{$i}) {
+            transition-delay: #{$initial}s;
+        }
+        $initial: $initial + $step;
+    }
 }
-
 
 // VISITKC Specific
-@mixin meetings--quicklink-styles($height: 40px, $width: 42px){
-	display: block;
-	font-weight: bold;
-	text-transform: uppercase;
-	@include font-cta();
-	&::before {
-		@include centererX();
-		content: '';
-		display: none;
-		position: absolute;
-		height: $height;
-		width: $width;
-		top: 0;
-		@include screen(md) {
-			display: block;
-		}
-	}
+@mixin meetings--quicklink-styles($height: 40px, $width: 42px) {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    @include font-cta();
+    &::before {
+        @include centererX();
+        content: "";
+        display: none;
+        position: absolute;
+        height: $height;
+        width: $width;
+        top: 0;
+        @include screen(md) {
+            display: block;
+        }
+    }
 }
 
 // Circular Images
 @mixin circularImage($circleMaskWidth, $circleMaskHeight) {
-	overflow: hidden;
-	border-radius: 50%;
-	width: $circleMaskWidth;
-	min-width: $circleMaskWidth;
-	height: $circleMaskHeight;
-	min-height: $circleMaskHeight;
+    overflow: hidden;
+    border-radius: 50%;
+    width: $circleMaskWidth;
+    min-width: $circleMaskWidth;
+    height: $circleMaskHeight;
+    min-height: $circleMaskHeight;
 }
 
 // Mixin for copy
 // Forgive the goofy var names. Wanted to make sure there weren't conflicts now or in the future
-@mixin copy($font-familia: $font-family,  $text-size: $font-normal-size,  $text-color: $gray-darker,  $text-line-height: null) {
-	font-family: $font-familia;
-	font-size: $text-size;
-	color: $text-color;
-	line-height: $text-line-height;
+@mixin copy(
+    $font-familia: $font-family,
+    $text-size: $font-normal-size,
+    $text-color: $gray-darker,
+    $text-line-height: null
+) {
+    font-family: $font-familia;
+    font-size: $text-size;
+    color: $text-color;
+    line-height: $text-line-height;
 }
 
 @mixin dividerHeading($dividerBG, $dividerBorder, $dividerMargin: 10px auto) {
-	display: flex;
-	flex: 1 1 auto;
-	position: relative;
-	margin: $dividerMargin;
-	text-transform: uppercase;
-	text-align: center;
+    display: flex;
+    flex: 1 1 auto;
+    position: relative;
+    margin: $dividerMargin;
+    text-transform: uppercase;
+    text-align: center;
 
-	@include screen(sm) {
-		&::before {
-			content: " ";
-			@include centerer();
-			border-top: 1px solid $dividerBorder;
-			width: 100%;
-		}
-	}
+    @include screen(sm) {
+        &::before {
+            content: " ";
+            @include centerer();
+            border-top: 1px solid $dividerBorder;
+            width: 100%;
+        }
+    }
 
-	span {
-		@include centerer();
-		padding: 0 26px;
-		white-space: nowrap;
-		background-color: $dividerBG;
-	}
-
+    span {
+        @include centerer();
+        padding: 0 26px;
+        white-space: nowrap;
+        background-color: $dividerBG;
+    }
 }
 
 @mixin section-head-styles {
-	&--head {
-		display: block;
-		@include screen(md) {
-			display: flex;
-			align-items: baseline;
-			.btn {
-				margin-right: 0;
-				margin-left: auto;
-			}
-		}		
-	}
-	&--headline {
-		@include font-section-headline();
-	}
-	&--subhead {
-		@include font-section-subhead();
-		@include screen(md) {
-			@include gutter('left');
-		}
-	}
-	.btn {
-		@extend .btn__transparent;
-	}
+    &--head {
+        display: block;
+        @include screen(md) {
+            display: flex;
+            align-items: baseline;
+            .btn {
+                margin-right: 0;
+                margin-left: auto;
+            }
+        }
+    }
+    &--headline {
+        @include font-section-headline();
+    }
+    &--subhead {
+        @include font-section-subhead();
+        @include screen(md) {
+            @include gutter("left");
+        }
+    }
+    .btn {
+        @extend .btn__transparent;
+    }
 }
 
-
 @function column-width-px($value1) {
-	@return (20px * ($value1 - 1));
+    @return (20px * ($value1 - 1));
 }
 
 @mixin column-row($count: 3) {
-	@include gutters();
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	@include screen(md) {
-		@include gutters(0);
-		flex-direction: row;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-	}	
-	> div {
-		max-width: none;
-		width: span(12);
-		@include screen(md) {
+    @include gutters();
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include screen(md) {
+        @include gutters(0);
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    > div {
+        max-width: none;
+        width: span(12);
+        @include screen(md) {
             margin-left: 20px;
-            width: calc((100% - #{column-width-px($count)}) / #{$count} );
-            &:nth-of-type(#{$count}n + 1){
-            	margin-left: 0;
+            width: calc((100% - #{column-width-px($count)}) / #{$count});
+            &:nth-of-type(#{$count}n + 1) {
+                margin-left: 0;
             }
-		}		
-	}
+        }
+    }
 }
 
 @mixin thumbnail-text() {
-	text-align: center;
-	padding: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
 @mixin column--with-ads() {
-	display: flex;
-	flex-direction: column;
-	@include screen(md) {
-		flex-direction: row;
-	}	
+    display: flex;
+    flex-direction: column;
+    @include screen(md) {
+        flex-direction: row;
+    }
 }
 
 @mixin tab-nav($linkcolor: color(white), $hovercolor: color(white)) {
-	@extend %navlist-nav;
-	display: flex;
-	justify-content: space-around;
-	padding-bottom: 10px;
-	li {
-		@include font-headline-small($color: $linkcolor);
-		a {
-			color: inherit;
-			padding-bottom: 10px;
-			&:hover {
-				color: $hovercolor;
-			}
-		}
-		margin-left: 20px;
-		&:first-of-type {
-			margin-left: 0;
-		}
-		&.active {
-			a {
-				text-decoration: underline;
-			}
-		}
-	}
-	@include screen(md) {
-		justify-content: flex-start;
-	}
+    @extend %navlist-nav;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    li {
+        @include font-headline-small($color: $linkcolor);
+        a {
+            color: inherit;
+            padding-bottom: 10px;
+            &:hover {
+                color: $hovercolor;
+            }
+        }
+        margin-left: 20px;
+        &:first-of-type {
+            margin-left: 0;
+        }
+        &.active {
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+    @include screen(md) {
+        justify-content: flex-start;
+    }
 }
