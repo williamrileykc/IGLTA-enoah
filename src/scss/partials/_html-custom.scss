@@ -1,0 +1,29 @@
+/*********/
+/* HTML Custom
+/*********/
+
+.flex-row {
+    display: flex;
+    flex-direction: column;
+    @include screen(lg) {
+        flex-direction: row;
+    }
+    > div[class^="col-"], 
+    > div[class*=" col-"] {
+        float: none;
+        width: 100%;
+    }
+    &.flex-row__vert-center {
+        @include screen(lg) {
+            align-items: center;
+        }
+    }
+    .gradLine {
+        display: none;
+        margin-bottom: 0;
+        @include screen(lg) {
+            display: block;
+            width: 5px;
+        }
+    }
+}
