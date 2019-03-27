@@ -1,0 +1,25 @@
+/*********/
+/* Advertisements
+/*********/
+
+%custom-adrow {
+    &[id*="mvBox"] {
+        padding: 0px!important;
+    }
+}
+
+.footer-ads {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+    @include screen(md) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.footer-ads--ad {
+    @extend %custom-adrow;
+    margin: 0 15px;
+}
