@@ -6,6 +6,26 @@
     &[id*="mvBox"] {
         padding: 0px!important;
     }
+    &::before {
+        content: 'Advertisement';;
+        @include color(grey-ad);
+        display: block;
+        font-size: 11px;
+        line-height: 1em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 10px;
+    }    
+    > a {
+        display: block;
+        text-align: center;
+        > img {
+            display: block;
+            margin: 0 auto;
+            height: auto!important;
+        }
+    }
 }
 
 .footer-ads {
@@ -17,9 +37,42 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
+    hr + & {
+        margin-top: 30px;
+    }
 }
-
 .footer-ads--ad {
     @extend %custom-adrow;
     margin: 0 15px;
+    // max-width: 367px;
+    @include screen(md) {
+        max-width: calc(33% - 20px);
+    }
 }
+
+.sidebar-ads {
+    padding-top: 20px;
+    @include screen(md) {
+        padding-left: 20px;
+        &.sidebar-ads__left {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+    }
+}
+.sidebar-ads--ad {
+    @extend %custom-adrow;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+.leaderboard-ads {
+    .panel-default + & {
+        padding-top: 20px;
+    } 
+}
+.leaderboard-ads--ad {
+    @extend %custom-adrow;
+    margin: 0 auto 20px auto;
+}
+

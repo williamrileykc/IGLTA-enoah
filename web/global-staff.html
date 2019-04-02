@@ -48,13 +48,17 @@
         ados.run.push(function () {
             /* load placement for account: Multiview,                           site: IGLTAweb - International Gay and Lesbian Travel Association - MultiWeb,                           zone: IGLTAwebTest - 450x450,                           size: 450x450 - 450 x 450 */
             ados_add_placement(4466, 56241, "mvbox450x450_1", 703).setZone(
-            188794); /* load placement for account: Multiview,                           site: IGLTAweb - International Gay and Lesbian Travel Association - MultiWeb,                           zone: IGLTAwebTest - 1200x150,                           size: 160x640 - 160 x 640 */
+                188794
+                ); /* load placement for account: Multiview,                           site: IGLTAweb - International Gay and Lesbian Travel Association - MultiWeb,                           zone: IGLTAwebTest - 1200x150,                           size: 160x640 - 160 x 640 */
             ados_add_placement(4466, 56241, "mvtall160x640", 3439).setZone(
-            188795); /* load placement for account: Multiview,                           site: IGLTAweb - International Gay and Lesbian Travel Association - MultiWeb,                           zone: IGLTAwebTest - 1200x150,                           size: 1200x150 - 1200 x 150 */
+                188795
+                ); /* load placement for account: Multiview,                           site: IGLTAweb - International Gay and Lesbian Travel Association - MultiWeb,                           zone: IGLTAwebTest - 1200x150,                           size: 1200x150 - 1200 x 150 */
             ados_add_placement(4466, 56241, "mvwide1200x150", 3213).setZone(
-            188795); /* load placement for account: Multiview,                           site: IGLTAweb - International Gay and Lesbian Travel Association - MultiWeb,                           zone: IGLTAwebTest - 1800x900,                           size: 1800x900 - 1800 x 900 */
+                188795
+                ); /* load placement for account: Multiview,                           site: IGLTAweb - International Gay and Lesbian Travel Association - MultiWeb,                           zone: IGLTAwebTest - 1800x900,                           size: 1800x900 - 1800 x 900 */
             ados_add_placement(4466, 56241, "mvbig1800x900", 3437).setZone(
-            188796); /* load placement for account: Multiview,                           site: IGLTAweb - International Gay and Lesbian Travel Association - MultiWeb,                           zone: IGLTAwebTest - 450x450 - second position,                           size: 450x450 - 450 x 450 */
+                188796
+                ); /* load placement for account: Multiview,                           site: IGLTAweb - International Gay and Lesbian Travel Association - MultiWeb,                           zone: IGLTAwebTest - 450x450 - second position,                           size: 450x450 - 450 x 450 */
             ados_add_placement(4466, 56241, "mvbox450x450_2", 703).setZone(188827);
             ados_setDomain("engine.multiview.com");
             ados_load();
@@ -1002,8 +1006,8 @@
                             switch (settings.action) {
                                 case ajaxActions.request:
                                     $('.ajax-area').show();
-                                    $('.ajax-data').html('<i class="fa fa-circle-o-notch fa-spin fa-3x"> <
-                                        /i>');
+                                    $('.ajax-data').html('<i class="fa fa-circle-o-notch fa-spin fa-3x"> < /
+                                        i > ');
                                         $(settings.affectedElement).find('.ajax-top-scroll').addClass(
                                             'ajax-Border-Request');
                                         break;
@@ -1103,8 +1107,9 @@
                                         workingServiceParameterTemplate = workingServiceParameterTemplate.replace(
                                             /{PARAMETERVALUE}/g, Object.values(this)[0] || '');
                                         workingServiceParameterTemplate = workingServiceParameterTemplate.replace(
-                                            '<> <
-                                            />', '');
+                                            '<> < /
+                                            > ', '
+                                            ');
                                         }
                                         else {
                                             workingServiceParameterTemplate = ''
@@ -1867,8 +1872,9 @@
                                                             /i>&nbsp;<div class="Nav-Word">' + currentHTML + '</div >
                                                             ');
                                                             $($('div[id*=NOAHSignInUser] > a')[1]).html(
-                                                                '<i aria-hidden="true" class="fa fa-user"> <
-                                                                /i>&nbsp;' + currentHTML);
+                                                                '<i aria-hidden="true" class="fa fa-user"> < /
+                                                                i > & nbsp;
+                                                                ' + currentHTML);
                                                             }
                                                             catch (ex) {
 
@@ -2558,7 +2564,7 @@
                         try {
                             console.log('%c Loading JSONMenu form scripts ...',
                                 'text-transform: uppercase; padding-left: 5em; padding-right: 5em; font-size: 1.5em; color: darkgreen; background-color: #90EE9055; width: 100%; border-top: 3px solid darkgreen; border-bottom: 3px solid darkgreen;'
-                                );
+                            );
                         } catch (ex) {
                             console.log(ex.message);
                         }
@@ -2581,12 +2587,12 @@
                         };
 
                         var menuItemTabNavigationContainer = '<ul class="nav nav-tabs {class}" {disabled}>{items}</ul>';
-                        var menuItemTabPaneContainer = '<div class="tab-content" {disabled}> <
-                            /div>';
+                        var menuItemTabPaneContainer = '<div class="tab-content" {disabled}> < /
+                            div > ';
 
                         var firstMenuItemTemplate =
                             '<li class="{class} Mega-Menu-Item" depthlevel="{depth}" childcount="{childcount}" > <
-                            a href = "#{id}"
+                        a href = "#{id}"
                         data - toggle = "tab"
                         url = "{url}"
                         ignore - hover - automation = "{ignoreAutomation}"
@@ -2601,15 +2607,15 @@
                             /li>';
                         var firstMenuItemPaneTemplate =
                             '<div class="tab-pane tab-pane-container {class}" id="{id}" childcount="{childcount}" > <
-                            div class = "top-menu col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                        div class = "top-menu col-lg-12 col-md-12 col-sm-12 col-xs-12" >
                             <
                             h3 > {
                                 title
                             } < /h3> <
-                            h6 > {
-                                description
-                            } < /h6> <
-                            div class = "top-menu-drop-down col-lg-12 col-md-12 col-sm-12 col-xs-12" > {
+                        h6 > {
+                            description
+                        } < /h6> <
+                        div class = "top-menu-drop-down col-lg-12 col-md-12 col-sm-12 col-xs-12" > {
                                 drop - down - menu
                             } < /div>{menu}</div >
                             <
@@ -2665,7 +2671,7 @@
 
                                 if (jsonDataToUse.subMenuItems != null && jsonDataToUse.subMenuItems != undefined &&
                                     jsonDataToUse.subMenuItems != 'undefined' && jsonDataToUse.subMenuItems.length > 0
-                                    ) {
+                                ) {
                                     // console.log(result)
                                     var extendedMenu = '';
                                     var index = 0;
@@ -2932,7 +2938,7 @@
                     </div>
 
                     <div class="Mega-Menu-Container col-lg-12 col-md-12 col-sm-12 col-xs-12 NO-PADDING"
-                        style="height: 100%; width: 100%; display: inline-block;">
+                        style="height: 100%; width: 100%; display: none;">
                         <div class="Mega-Menu-Top-Left col-lg-4 col-md-4 col-sm-12 col-xs-12 NO-PADDING NO-MARGIN"
                             style="height: 100%; display: inline-block;">
 
@@ -8476,15 +8482,17 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div id="mvSkinnyLeader">
-                                                        <a href="https://engine.multiview.com/r?e=eyJ2IjoiMS4xIiwiYXYiOjEyMDM3MiwiYXQiOjMyMTMsImJ0IjowLCJjbSI6MzY2MTg1LCJjaCI6MTYyMTgsImNrIjp7fSwiY3IiOjY0MTEzNDAsImRpIjoiMGE0YjQ0ZjA0ZGE1NDU3OWJhZWVmYzFmYWMwOTAxYmMiLCJkaiI6MCwiaWkiOiI4N2ZjODI2NTJjMzY0ZTk0YjdiZDg1MzkyYTA5ZjliMCIsImRtIjoxLCJmYyI6OTM0ODcyOCwiZmwiOjgwMDkxMjAsImlwIjoiMTM2LjMzLjE4OS4xMjgiLCJudyI6NDQ2NiwicGMiOjAsImVjIjowLCJwciI6NTQ0MzYsInJ0IjoxLCJycyI6NTAwLCJzYSI6IjkiLCJzYiI6ImktMDVjYWU4MTgzOWZiNjQzYzMiLCJzcCI6MTUyMDYsInN0Ijo1NjI0MSwidWsiOiJ1ZTEtNGI5MTU0MWE3NDNjNGIwOWE2MjQ1ZTZhOTZiYWVmMjAiLCJ6biI6MTg4Nzk1LCJ0cyI6MTU1MzY0Njk1NzY5NSwiYmYiOnRydWUsInBuIjoibXZTa2lubnlMZWFkZXIiLCJnYyI6dHJ1ZSwiZ3MiOiJub25lIiwidXIiOiJodHRwczovL3d3dy5pZ2x0YS5vcmcvd2luIn0&amp;s=7qsCxk_N5c09ZrCiD1b759ahiig"
-                                                            rel="nofollow" target="_blank" title="">
-                                                            <img src="https://s.zkcdn.net/Advertisers/e73f7e9615474052a800a4f65d19f145.jpg"
-                                                                title="" alt="" border="0" width="1200" height="150">
-                                                        </a>
-                                                        <img height="0px" width="0px" border="0"
-                                                            style="position:absolute;"
-                                                            src="https://engine.multiview.com/i.gif?e=eyJ2IjoiMS4xIiwiYXYiOjEyMDM3MiwiYXQiOjMyMTMsImJ0IjowLCJjbSI6MzY2MTg1LCJjaCI6MTYyMTgsImNrIjp7fSwiY3IiOjY0MTEzNDAsImRpIjoiMGE0YjQ0ZjA0ZGE1NDU3OWJhZWVmYzFmYWMwOTAxYmMiLCJkaiI6MCwiaWkiOiI4N2ZjODI2NTJjMzY0ZTk0YjdiZDg1MzkyYTA5ZjliMCIsImRtIjoxLCJmYyI6OTM0ODcyOCwiZmwiOjgwMDkxMjAsImlwIjoiMTM2LjMzLjE4OS4xMjgiLCJudyI6NDQ2NiwicGMiOjAsImVjIjowLCJwciI6NTQ0MzYsInJ0IjoxLCJycyI6NTAwLCJzYSI6IjkiLCJzYiI6ImktMDVjYWU4MTgzOWZiNjQzYzMiLCJzcCI6MTUyMDYsInN0Ijo1NjI0MSwidWsiOiJ1ZTEtNGI5MTU0MWE3NDNjNGIwOWE2MjQ1ZTZhOTZiYWVmMjAiLCJ6biI6MTg4Nzk1LCJ0cyI6MTU1MzY0Njk1NzY5NSwiYmYiOnRydWUsInBuIjoibXZTa2lubnlMZWFkZXIiLCJnYyI6dHJ1ZSwiZ3MiOiJub25lIiwiYmEiOjEsImZxIjowfQ&amp;s=q0Ia5oSD7uEBzQrXm-oUkdPn77I">
+                                                    <div class="leaderboard-ads">
+                                                        <div id="mvSkinnyLeader"  class="leaderboard-ads--ad">
+                                                            <a href="https://engine.multiview.com/r?e=eyJ2IjoiMS4xIiwiYXYiOjEyMDM3MiwiYXQiOjMyMTMsImJ0IjowLCJjbSI6MzY2MTg1LCJjaCI6MTYyMTgsImNrIjp7fSwiY3IiOjY0MTEzNDAsImRpIjoiMGE0YjQ0ZjA0ZGE1NDU3OWJhZWVmYzFmYWMwOTAxYmMiLCJkaiI6MCwiaWkiOiI4N2ZjODI2NTJjMzY0ZTk0YjdiZDg1MzkyYTA5ZjliMCIsImRtIjoxLCJmYyI6OTM0ODcyOCwiZmwiOjgwMDkxMjAsImlwIjoiMTM2LjMzLjE4OS4xMjgiLCJudyI6NDQ2NiwicGMiOjAsImVjIjowLCJwciI6NTQ0MzYsInJ0IjoxLCJycyI6NTAwLCJzYSI6IjkiLCJzYiI6ImktMDVjYWU4MTgzOWZiNjQzYzMiLCJzcCI6MTUyMDYsInN0Ijo1NjI0MSwidWsiOiJ1ZTEtNGI5MTU0MWE3NDNjNGIwOWE2MjQ1ZTZhOTZiYWVmMjAiLCJ6biI6MTg4Nzk1LCJ0cyI6MTU1MzY0Njk1NzY5NSwiYmYiOnRydWUsInBuIjoibXZTa2lubnlMZWFkZXIiLCJnYyI6dHJ1ZSwiZ3MiOiJub25lIiwidXIiOiJodHRwczovL3d3dy5pZ2x0YS5vcmcvd2luIn0&amp;s=7qsCxk_N5c09ZrCiD1b759ahiig"
+                                                                rel="nofollow" target="_blank" title="">
+                                                                <img src="https://s.zkcdn.net/Advertisers/e73f7e9615474052a800a4f65d19f145.jpg"
+                                                                    title="" alt="" border="0" width="1200" height="150">
+                                                            </a>
+                                                            <img height="0px" width="0px" border="0"
+                                                                style="position:absolute;"
+                                                                src="https://engine.multiview.com/i.gif?e=eyJ2IjoiMS4xIiwiYXYiOjEyMDM3MiwiYXQiOjMyMTMsImJ0IjowLCJjbSI6MzY2MTg1LCJjaCI6MTYyMTgsImNrIjp7fSwiY3IiOjY0MTEzNDAsImRpIjoiMGE0YjQ0ZjA0ZGE1NDU3OWJhZWVmYzFmYWMwOTAxYmMiLCJkaiI6MCwiaWkiOiI4N2ZjODI2NTJjMzY0ZTk0YjdiZDg1MzkyYTA5ZjliMCIsImRtIjoxLCJmYyI6OTM0ODcyOCwiZmwiOjgwMDkxMjAsImlwIjoiMTM2LjMzLjE4OS4xMjgiLCJudyI6NDQ2NiwicGMiOjAsImVjIjowLCJwciI6NTQ0MzYsInJ0IjoxLCJycyI6NTAwLCJzYSI6IjkiLCJzYiI6ImktMDVjYWU4MTgzOWZiNjQzYzMiLCJzcCI6MTUyMDYsInN0Ijo1NjI0MSwidWsiOiJ1ZTEtNGI5MTU0MWE3NDNjNGIwOWE2MjQ1ZTZhOTZiYWVmMjAiLCJ6biI6MTg4Nzk1LCJ0cyI6MTU1MzY0Njk1NzY5NSwiYmYiOnRydWUsInBuIjoibXZTa2lubnlMZWFkZXIiLCJnYyI6dHJ1ZSwiZ3MiOiJub25lIiwiYmEiOjEsImZxIjowfQ&amp;s=q0Ia5oSD7uEBzQrXm-oUkdPn77I">
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -8509,26 +8517,30 @@
                                             <!-- Start_Module_11423 -->
                                             <div id="dnn_ctr11423_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
                                                 <div id="dnn_ctr11423_HtmlModule_lblContent">
-                                                    <div id="mvBox1_1" style="padding-bottom: 20px;">
-                                                        <a href="https://engine.multiview.com/r?e=eyJ2IjoiMS4xIiwiYXYiOjM4NTk3MSwiYXQiOjcwMywiYnQiOjAsImNtIjo3NTM1MDAsImNoIjoxNjIxOCwiY2siOnt9LCJjciI6NDk0MTU2NywiZGkiOiIxNjYxYzFmZGM5YmE0NzBjYTk0ZDJkYjU1MmU2NTY2MyIsImRqIjowLCJpaSI6ImYzODhiMDUxMGYzNjQyOTY4OTZjNzUxYjI5MTQyMDYzIiwiZG0iOjEsImZjIjo3ODQ0NTExLCJmbCI6NzQ3OTE0OSwiaXAiOiIxMzYuMzMuMTg5LjEyOCIsIm53Ijo0NDY2LCJwYyI6MCwiZWMiOjAsInByIjo1NDQzNiwicnQiOjEsInJzIjo1MDAsInNhIjoiOSIsInNiIjoiaS0wNWNhZTgxODM5ZmI2NDNjMyIsInNwIjoxNTIwNiwic3QiOjU2MjQxLCJ1ayI6InVlMS00YjkxNTQxYTc0M2M0YjA5YTYyNDVlNmE5NmJhZWYyMCIsInpuIjoxODg3OTQsInRzIjoxNTUzNjQ2OTU3Njg1LCJiZiI6dHJ1ZSwicG4iOiJtdkJveDFfMSIsImdjIjp0cnVlLCJncyI6Im5vbmUiLCJ1ciI6Imh0dHA6Ly93d3cuaW5ub25sb25nbGFrZS5jb20vP0NJRD1tdndlYl9pZ2x0YSJ9&amp;s=dexYk3qAD8xskq1HTpCdyirAVD4"
-                                                            rel="nofollow" target="_blank" title="">
-                                                            <img src="https://s.zkcdn.net/Advertisers/b491d0d5ebc94a3a813e68a204663e9b.jpg"
-                                                                title="" alt="" border="0" width="450" height="450">
-                                                        </a>
-                                                        <img height="0px" width="0px" border="0"
-                                                            style="position:absolute;"
-                                                            src="https://engine.multiview.com/i.gif?e=eyJ2IjoiMS4xIiwiYXYiOjM4NTk3MSwiYXQiOjcwMywiYnQiOjAsImNtIjo3NTM1MDAsImNoIjoxNjIxOCwiY2siOnt9LCJjciI6NDk0MTU2NywiZGkiOiIxNjYxYzFmZGM5YmE0NzBjYTk0ZDJkYjU1MmU2NTY2MyIsImRqIjowLCJpaSI6ImYzODhiMDUxMGYzNjQyOTY4OTZjNzUxYjI5MTQyMDYzIiwiZG0iOjEsImZjIjo3ODQ0NTExLCJmbCI6NzQ3OTE0OSwiaXAiOiIxMzYuMzMuMTg5LjEyOCIsIm53Ijo0NDY2LCJwYyI6MCwiZWMiOjAsInByIjo1NDQzNiwicnQiOjEsInJzIjo1MDAsInNhIjoiOSIsInNiIjoiaS0wNWNhZTgxODM5ZmI2NDNjMyIsInNwIjoxNTIwNiwic3QiOjU2MjQxLCJ1ayI6InVlMS00YjkxNTQxYTc0M2M0YjA5YTYyNDVlNmE5NmJhZWYyMCIsInpuIjoxODg3OTQsInRzIjoxNTUzNjQ2OTU3Njg2LCJiZiI6dHJ1ZSwicG4iOiJtdkJveDFfMSIsImdjIjp0cnVlLCJncyI6Im5vbmUiLCJiYSI6MSwiZnEiOjB9&amp;s=1z5i-eZWCYSy51cs3B8GlZM8-Y8">
+
+                                                    <div class="sidebar-ads">
+                                                        <div id="mvBox1_1" class="sidebar-ads--ad">
+                                                            <a href="https://engine.multiview.com/r?e=eyJ2IjoiMS4xIiwiYXYiOjM4NTk3MSwiYXQiOjcwMywiYnQiOjAsImNtIjo3NTM1MDAsImNoIjoxNjIxOCwiY2siOnt9LCJjciI6NDk0MTU2NywiZGkiOiIxNjYxYzFmZGM5YmE0NzBjYTk0ZDJkYjU1MmU2NTY2MyIsImRqIjowLCJpaSI6ImYzODhiMDUxMGYzNjQyOTY4OTZjNzUxYjI5MTQyMDYzIiwiZG0iOjEsImZjIjo3ODQ0NTExLCJmbCI6NzQ3OTE0OSwiaXAiOiIxMzYuMzMuMTg5LjEyOCIsIm53Ijo0NDY2LCJwYyI6MCwiZWMiOjAsInByIjo1NDQzNiwicnQiOjEsInJzIjo1MDAsInNhIjoiOSIsInNiIjoiaS0wNWNhZTgxODM5ZmI2NDNjMyIsInNwIjoxNTIwNiwic3QiOjU2MjQxLCJ1ayI6InVlMS00YjkxNTQxYTc0M2M0YjA5YTYyNDVlNmE5NmJhZWYyMCIsInpuIjoxODg3OTQsInRzIjoxNTUzNjQ2OTU3Njg1LCJiZiI6dHJ1ZSwicG4iOiJtdkJveDFfMSIsImdjIjp0cnVlLCJncyI6Im5vbmUiLCJ1ciI6Imh0dHA6Ly93d3cuaW5ub25sb25nbGFrZS5jb20vP0NJRD1tdndlYl9pZ2x0YSJ9&amp;s=dexYk3qAD8xskq1HTpCdyirAVD4"
+                                                                rel="nofollow" target="_blank" title="">
+                                                                <img src="https://s.zkcdn.net/Advertisers/b491d0d5ebc94a3a813e68a204663e9b.jpg"
+                                                                    title="" alt="" border="0" width="450" height="450">
+                                                            </a>
+                                                            <img height="0px" width="0px" border="0"
+                                                                style="position:absolute;"
+                                                                src="https://engine.multiview.com/i.gif?e=eyJ2IjoiMS4xIiwiYXYiOjM4NTk3MSwiYXQiOjcwMywiYnQiOjAsImNtIjo3NTM1MDAsImNoIjoxNjIxOCwiY2siOnt9LCJjciI6NDk0MTU2NywiZGkiOiIxNjYxYzFmZGM5YmE0NzBjYTk0ZDJkYjU1MmU2NTY2MyIsImRqIjowLCJpaSI6ImYzODhiMDUxMGYzNjQyOTY4OTZjNzUxYjI5MTQyMDYzIiwiZG0iOjEsImZjIjo3ODQ0NTExLCJmbCI6NzQ3OTE0OSwiaXAiOiIxMzYuMzMuMTg5LjEyOCIsIm53Ijo0NDY2LCJwYyI6MCwiZWMiOjAsInByIjo1NDQzNiwicnQiOjEsInJzIjo1MDAsInNhIjoiOSIsInNiIjoiaS0wNWNhZTgxODM5ZmI2NDNjMyIsInNwIjoxNTIwNiwic3QiOjU2MjQxLCJ1ayI6InVlMS00YjkxNTQxYTc0M2M0YjA5YTYyNDVlNmE5NmJhZWYyMCIsInpuIjoxODg3OTQsInRzIjoxNTUzNjQ2OTU3Njg2LCJiZiI6dHJ1ZSwicG4iOiJtdkJveDFfMSIsImdjIjp0cnVlLCJncyI6Im5vbmUiLCJiYSI6MSwiZnEiOjB9&amp;s=1z5i-eZWCYSy51cs3B8GlZM8-Y8">
+                                                        </div>
+                                                        <div id="mvBigSky" class="sidebar-ads--ad">
+                                                            <a href="https://engine.multiview.com/r?e=eyJ2IjoiMS4xIiwiYXYiOjEyMDM3MiwiYXQiOjM0OTcsImJ0IjowLCJjbSI6MzY2MTg1LCJjaCI6MTYyMTgsImNrIjp7fSwiY3IiOjY0OTEzMTcsImRpIjoiYmFiZWJmMGU5MTBlNDNhMDk2NWU0MmQ0YWYwNzMyOTYiLCJkaiI6MCwiaWkiOiIyYTM1ZGJkM2ZjMTM0Yzk2OGQ5ZjZiMmZhZDAyMWZkNyIsImRtIjoxLCJmYyI6OTQyOTMzNCwiZmwiOjgwMjkzNzAsImlwIjoiMTM2LjMzLjE4OS4xMjgiLCJudyI6NDQ2NiwicGMiOjAsImVjIjowLCJwciI6NTQ0MzYsInJ0IjoxLCJycyI6NTAwLCJzYSI6IjkiLCJzYiI6ImktMDVjYWU4MTgzOWZiNjQzYzMiLCJzcCI6MTUyMDYsInN0Ijo1NjI0MSwidWsiOiJ1ZTEtNGI5MTU0MWE3NDNjNGIwOWE2MjQ1ZTZhOTZiYWVmMjAiLCJ6biI6MTk2MjIzLCJ0cyI6MTU1MzY0Njk1NzY5MywiYmYiOnRydWUsInBuIjoibXZCaWdTa3kiLCJnYyI6dHJ1ZSwiZ3MiOiJub25lIiwidXIiOiJodHRwczovL3d3dy5pZ2x0YS5vcmcvd2luIn0&amp;s=rAVLQdODjbcJLtTzilZQ0iWvMu4"
+                                                                rel="nofollow" target="_blank" title="">
+                                                                <img src="https://s.zkcdn.net/Advertisers/7b8b10bd15224e1aa89791d62396b814.jpg"
+                                                                    title="" alt="" border="0" width="240" height="960">
+                                                            </a>
+                                                            <img height="0px" width="0px" border="0"
+                                                                style="position:absolute;"
+                                                                src="https://engine.multiview.com/i.gif?e=eyJ2IjoiMS4xIiwiYXYiOjEyMDM3MiwiYXQiOjM0OTcsImJ0IjowLCJjbSI6MzY2MTg1LCJjaCI6MTYyMTgsImNrIjp7fSwiY3IiOjY0OTEzMTcsImRpIjoiYmFiZWJmMGU5MTBlNDNhMDk2NWU0MmQ0YWYwNzMyOTYiLCJkaiI6MCwiaWkiOiIyYTM1ZGJkM2ZjMTM0Yzk2OGQ5ZjZiMmZhZDAyMWZkNyIsImRtIjoxLCJmYyI6OTQyOTMzNCwiZmwiOjgwMjkzNzAsImlwIjoiMTM2LjMzLjE4OS4xMjgiLCJudyI6NDQ2NiwicGMiOjAsImVjIjowLCJwciI6NTQ0MzYsInJ0IjoxLCJycyI6NTAwLCJzYSI6IjkiLCJzYiI6ImktMDVjYWU4MTgzOWZiNjQzYzMiLCJzcCI6MTUyMDYsInN0Ijo1NjI0MSwidWsiOiJ1ZTEtNGI5MTU0MWE3NDNjNGIwOWE2MjQ1ZTZhOTZiYWVmMjAiLCJ6biI6MTk2MjIzLCJ0cyI6MTU1MzY0Njk1NzY5NCwiYmYiOnRydWUsInBuIjoibXZCaWdTa3kiLCJnYyI6dHJ1ZSwiZ3MiOiJub25lIiwiYmEiOjEsImZxIjowfQ&amp;s=QrXPjRaILQ9mVhl0dit5EvyRVxc">
+                                                        </div>
                                                     </div>
-                                                    <div id="mvBigSky" style="text-align: center;">
-                                                        <a href="https://engine.multiview.com/r?e=eyJ2IjoiMS4xIiwiYXYiOjEyMDM3MiwiYXQiOjM0OTcsImJ0IjowLCJjbSI6MzY2MTg1LCJjaCI6MTYyMTgsImNrIjp7fSwiY3IiOjY0OTEzMTcsImRpIjoiYmFiZWJmMGU5MTBlNDNhMDk2NWU0MmQ0YWYwNzMyOTYiLCJkaiI6MCwiaWkiOiIyYTM1ZGJkM2ZjMTM0Yzk2OGQ5ZjZiMmZhZDAyMWZkNyIsImRtIjoxLCJmYyI6OTQyOTMzNCwiZmwiOjgwMjkzNzAsImlwIjoiMTM2LjMzLjE4OS4xMjgiLCJudyI6NDQ2NiwicGMiOjAsImVjIjowLCJwciI6NTQ0MzYsInJ0IjoxLCJycyI6NTAwLCJzYSI6IjkiLCJzYiI6ImktMDVjYWU4MTgzOWZiNjQzYzMiLCJzcCI6MTUyMDYsInN0Ijo1NjI0MSwidWsiOiJ1ZTEtNGI5MTU0MWE3NDNjNGIwOWE2MjQ1ZTZhOTZiYWVmMjAiLCJ6biI6MTk2MjIzLCJ0cyI6MTU1MzY0Njk1NzY5MywiYmYiOnRydWUsInBuIjoibXZCaWdTa3kiLCJnYyI6dHJ1ZSwiZ3MiOiJub25lIiwidXIiOiJodHRwczovL3d3dy5pZ2x0YS5vcmcvd2luIn0&amp;s=rAVLQdODjbcJLtTzilZQ0iWvMu4"
-                                                            rel="nofollow" target="_blank" title="">
-                                                            <img src="https://s.zkcdn.net/Advertisers/7b8b10bd15224e1aa89791d62396b814.jpg"
-                                                                title="" alt="" border="0" width="240" height="960">
-                                                        </a>
-                                                        <img height="0px" width="0px" border="0"
-                                                            style="position:absolute;"
-                                                            src="https://engine.multiview.com/i.gif?e=eyJ2IjoiMS4xIiwiYXYiOjEyMDM3MiwiYXQiOjM0OTcsImJ0IjowLCJjbSI6MzY2MTg1LCJjaCI6MTYyMTgsImNrIjp7fSwiY3IiOjY0OTEzMTcsImRpIjoiYmFiZWJmMGU5MTBlNDNhMDk2NWU0MmQ0YWYwNzMyOTYiLCJkaiI6MCwiaWkiOiIyYTM1ZGJkM2ZjMTM0Yzk2OGQ5ZjZiMmZhZDAyMWZkNyIsImRtIjoxLCJmYyI6OTQyOTMzNCwiZmwiOjgwMjkzNzAsImlwIjoiMTM2LjMzLjE4OS4xMjgiLCJudyI6NDQ2NiwicGMiOjAsImVjIjowLCJwciI6NTQ0MzYsInJ0IjoxLCJycyI6NTAwLCJzYSI6IjkiLCJzYiI6ImktMDVjYWU4MTgzOWZiNjQzYzMiLCJzcCI6MTUyMDYsInN0Ijo1NjI0MSwidWsiOiJ1ZTEtNGI5MTU0MWE3NDNjNGIwOWE2MjQ1ZTZhOTZiYWVmMjAiLCJ6biI6MTk2MjIzLCJ0cyI6MTU1MzY0Njk1NzY5NCwiYmYiOnRydWUsInBuIjoibXZCaWdTa3kiLCJnYyI6dHJ1ZSwiZ3MiOiJub25lIiwiYmEiOjEsImZxIjowfQ&amp;s=QrXPjRaILQ9mVhl0dit5EvyRVxc">
-                                                    </div>
+
                                                 </div>
 
 
@@ -8713,7 +8725,8 @@
                                                                 src="https://engine.multiview.com/i.gif?e=eyJ2IjoiMS4xIiwiYXYiOjM1MjYxNywiYXQiOjcwMywiYnQiOjAsImNtIjo3MTg3ODIsImNoIjoxNjIxOCwiY2siOnt9LCJjciI6NDQzODQ0MCwiZGkiOiIwYWQ1NTBhMTgyNWE0NWM1YjFjNjA1MGJlZjMzODk0MyIsImRqIjowLCJpaSI6IjI5ZjJjZmI0MjQ4OTQ0MTdiODAyN2VjMjYzZTkyNGMwIiwiZG0iOjEsImZjIjo3MzEyOTAxLCJmbCI6NzEzMjQwNiwiaXAiOiIxMzYuMzMuMTg5LjEyOCIsIm53Ijo0NDY2LCJwYyI6MCwiZWMiOjAsInByIjo1NDQzNiwicnQiOjEsInJzIjo1MDAsInNhIjoiOSIsInNiIjoiaS0wNWNhZTgxODM5ZmI2NDNjMyIsInNwIjoxNTIwNiwic3QiOjU2MjQxLCJ1ayI6InVlMS00YjkxNTQxYTc0M2M0YjA5YTYyNDVlNmE5NmJhZWYyMCIsInpuIjoxODg4MjcsInRzIjoxNTUzNjQ2OTU3NjkyLCJiZiI6dHJ1ZSwicG4iOiJtdkJveDJfMiIsImdjIjp0cnVlLCJncyI6Im5vbmUiLCJiYSI6MSwiZnEiOjB9&amp;s=LCHYEmnbXFL8s7wTWaRwttfQ1gE">
                                                         </div>
 
-                                                        <link rel="stylesheet" type="text/css" href="/Portals/79/Skins/IGLTA/css/styles-bsharper.css" />
+                                                        <link rel="stylesheet" type="text/css"
+                                                            href="/Portals/79/Skins/IGLTA/css/styles-bsharper.css" />
 
 
                                                         <div style="clear:both;">
