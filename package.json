@@ -51,7 +51,7 @@
     "google-maps-utility-library-v3-infobox": "^1.1.14",
     "googlemaps-v3-utility-library": "^1.0.1",
     "instafeed.js": "^1.4.1",
-    "jquery": "^2.2.4",
+    "jquery": "^3.5.0",
     "jquery-ui-dist": "^1.12.1",
     "normalize.scss": "^0.1.0",
     "rellax": "^1.6.2",
